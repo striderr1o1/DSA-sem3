@@ -6,7 +6,7 @@ using namespace std;
 class Stack{
     private:
     // const int size = 10;
-    int array[5];
+    int array[20];
     int top;
     
     public:
@@ -16,7 +16,7 @@ class Stack{
     bool checkFull();
     bool checkEmpty();
     void push(int x);
-    void pop();
+    int pop();
     void display();
 };
 

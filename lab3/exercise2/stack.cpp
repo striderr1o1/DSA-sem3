@@ -9,7 +9,7 @@ int Stack::getTop(){
 int Stack::getArraySize(){
     
 
-    return sizeof(array)/4;
+    return sizeof(array)/1;
 }
 bool Stack::checkFull(){
     int arraySize = getArraySize();
@@ -28,7 +28,7 @@ bool Stack::checkEmpty(){
     else
     return false;
 }
-void Stack::push(int x){
+void Stack::push(char x){
     if(checkFull()){
         cout << "Cannot Push: Array Full\n";
     }
@@ -36,19 +36,20 @@ void Stack::push(int x){
         array[++top] = x;
     }
 }
-void Stack::pop(){
+char Stack::pop(){
     bool check = checkEmpty();
     if(check == true){
         cout << "Cannot pop\n";
+        return 0;
     }
     else{
-        top--;
+        
+        return array[top--];
     }
 }
 void Stack::display(){
     for(int i = 0; i <= top; i++){
         cout << "[" << array[i] << "]";
-        
     }
     cout << endl;
 }
