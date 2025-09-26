@@ -18,8 +18,9 @@ for(int i = 0; i < 5; i++){
 queue.display();
 cout << endl;
 node array[5];
-for(int i = 0; i < 5; i++){
+for(int i = 0; i < 4; i++){
    try{
+    cout << i+1 << " times...";
     array[i] = queue.dequeue();
    }
    catch(exception e){
@@ -29,4 +30,8 @@ for(int i = 0; i < 5; i++){
    queue.display();
    cout << endl;
 }
+node a;
+a.priority = 7;
+a.value = 4;
+queue.enqueue(a);
 }

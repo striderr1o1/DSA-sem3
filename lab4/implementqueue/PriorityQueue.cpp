@@ -48,16 +48,23 @@ node PriorityQueue::dequeue(){
             index = i;
             i++;
         }while(prrty == 0);
-            
-        for(int i = 0; i < size; i++){
+
+        for(int i = 0; i <= rear; i++){
             if(array[i].priority < prrty && array[i].priority != 0){
                 prrty = array[i].priority;
                 index = i;
             }
         }
-        array[index].priority = 0;
-        array[index].value = 0;
-        return array[index];
+        
+        node PoppedNode = array[index];
+        for(int i = index; i < size; i++){
+            
+            array[i] = array[i+1];
+        }
+        rear--;
+        // array[index].priority = 0;
+        // array[index].value = 0;
+        return PoppedNode;
     }
     else{
         cout << "Empty!\n";
@@ -71,7 +78,7 @@ node PriorityQueue::dequeue(){
 }
 
 void PriorityQueue::display(){
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i <= rear; i++){
         cout << "["<< array[i].priority << " "<< array[i].value <<"]";
     }
 }
