@@ -36,11 +36,22 @@ void PriorityQueue::enqueue(node x){
     }
 }
 node PriorityQueue::dequeue(){
+    
     if(!CheckEmpty()){
+        // int index = 0;
+        // int prrty = array[0].priority;
         int index;
-        int prrty = array[0].priority;
+        int prrty;
+        int i = 0;
+        do{
+            prrty = array[i].priority;
+            index = i;
+            i++;
+        }while(prrty == 0);
+            
         for(int i = 0; i < size; i++){
-            if(array[i].priority > prrty){
+            if(array[i].priority < prrty && array[i].priority != 0){
+                prrty = array[i].priority;
                 index = i;
             }
         }
@@ -55,6 +66,8 @@ node PriorityQueue::dequeue(){
         n.value = 0;
         return n;
     }
+
+
 }
 
 void PriorityQueue::display(){
