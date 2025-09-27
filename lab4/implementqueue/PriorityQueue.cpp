@@ -62,6 +62,7 @@ node PriorityQueue::dequeue(){
             array[i] = array[i+1];
         }
         rear--;
+        count--;
         // array[index].priority = 0;
         // array[index].value = 0;
         return PoppedNode;

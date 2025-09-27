@@ -4,6 +4,7 @@ using namespace std;
 int main(){
 PriorityQueue queue;
 for(int i = 0; i < 5; i++){
+    
     node n;
     cout << "Node " << i+1 << endl;
     do{
@@ -14,6 +15,8 @@ for(int i = 0; i < 5; i++){
     }while(n.priority==0);
     cout << "\nEnter Value: "; cin >> n.value;
     queue.enqueue(n);
+    queue.display();
+    cout << endl;
 }
 queue.display();
 cout << endl;
@@ -30,8 +33,24 @@ for(int i = 0; i < 4; i++){
    queue.display();
    cout << endl;
 }
-node a;
-a.priority = 7;
-a.value = 4;
-queue.enqueue(a);
+cout << "Adding new nodes: " <<endl;
+for(int i = 0; i < 4; i++){
+    cout << endl;
+    node n;
+    cout << "Node " << i+1 << endl;
+    do{
+        cout << "Enter priority: "; cin >> n.priority;
+        if(n.priority == 0){
+            cout << "\n0 not allowed!\n";
+        }
+    }while(n.priority==0);
+    cout << "\nEnter Value: "; cin >> n.value;
+    queue.enqueue(n);
+    queue.display();
 }
+cout << "\nNew queue: " << endl;
+queue.display();
+cout << endl;
+
+}
+//issue: queue is full even after dequeue
