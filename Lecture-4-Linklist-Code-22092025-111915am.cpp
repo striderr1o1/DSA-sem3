@@ -49,9 +49,9 @@ public:
 
         // If node to delete is head
         if (head->data == value) {
-            Node* temp = head;
-            head = head->next;
-            delete temp;
+            Node* temp = head;//create temporary node and pass the previous head address to it
+            head = head->next;// now head is equal to the next node pointed to by the previous head
+            delete temp;//delete old
             return;
         }
 
