@@ -11,7 +11,7 @@ void queue::insert(int n){
     }
     else{
         Q[rear++] = n;
-    if(rear == arraysize()-1){
+    if(rear == arraysize()){
         rear = 0;
     }
     }
@@ -35,4 +35,5 @@ void queue::display(){
     for(int i = 0; i < arraysize(); i++){
         cout << Q[i] << " ";
     }
+    cout << endl;
 }
