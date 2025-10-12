@@ -21,6 +21,7 @@ for(int i = 0; i < 5; i++){
 queue.display();
 cout << endl;
 node array[5];
+cout << "\nRemoving nodes:\n";
 for(int i = 0; i < 4; i++){
    try{
     cout << i+1 << " times...";
@@ -33,7 +34,7 @@ for(int i = 0; i < 4; i++){
    queue.display();
    cout << endl;
 }
-cout << "Adding new nodes: " <<endl;
+cout << "\nAdding new nodes: " <<endl;
 for(int i = 0; i < 4; i++){
     cout << endl;
     node n;

@@ -1,39 +1,63 @@
 #include "queue.h"
 
-queue::queue(){
-    front = -1;
+CircularQueue::CircularQueue(){
+    front = 0;
     rear = 0;
+    count = 0;
 }
-void queue::insert(int n){
+void CircularQueue::enqueue(int n){
     
-    if(checkFull() == true){
+    if(Full() == true){
         cout << "Array full\n";
     }
     else{
         Q[rear++] = n;
+        count++;
     if(rear == arraysize()){
         rear = 0;
     }
     }
 }
-void queue::del(){
-    front++;
-    Q[front] = 0;
+
+void CircularQueue::dequeue(){
+    if(!Empty()){
+        count--;
+        Q[front] = 0;
+        front++;
+        if(front == arraysize()){
+            front = 0;
+        }
+    }
+    
 }
-int queue::arraysize(){
+
+int CircularQueue::arraysize(){
     int size = (sizeof(Q))/4;
     return size;
 }
-bool queue::checkFull(){
-    if(rear == front){
+bool CircularQueue::Full(){
+    if(count == arraysize()){
         return true;
     }
     else
     return false;
 }
-void queue::display(){
+bool CircularQueue::Empty(){
+    if(count == 0){
+         cout << "Its empty" << endl;
+        return true;
+    }
+    else{
+       
+        return false;
+    }
+}
+void CircularQueue::display(){
     for(int i = 0; i < arraysize(); i++){
         cout << Q[i] << " ";
     }
     cout << endl;
+}
+int CircularQueue::getFront(){
+    return Q[front];
 }

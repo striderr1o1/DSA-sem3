@@ -5,19 +5,22 @@
 using namespace std;
 
 
-class queue
+class CircularQueue
 {
 private:
     int Q[5];
     int front;
     int rear;
+    int count;
 public:
-    queue();
-    void insert(int n);
-    void del();
+    CircularQueue();
+    void enqueue(int n);
+    void dequeue();
     int arraysize();
-    bool checkFull();
+    bool Full();
     void display();
+    bool Empty();
+    int getFront();
    
 };
 

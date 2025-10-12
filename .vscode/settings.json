@@ -107,6 +107,8 @@
         "valarray": "cpp",
         "variant": "cpp",
         "__locale": "cpp",
-        "version": "cpp"
+        "version": "cpp",
+        "__bit_reference": "cpp",
+        "__threading_support": "cpp"
     }
 }
