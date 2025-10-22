@@ -30,7 +30,7 @@ void List::pop(){
         return;
     }
     Node* temp = head;
-    Node* prev = head;
+    Node* prev;
 
     while(temp->next!=nullptr){
         prev = temp;
@@ -41,6 +41,7 @@ void List::pop(){
         head = nullptr;
         return;
     }
+    prev = head;
     prev->next = nullptr;
     delete temp;
 }
@@ -50,16 +51,16 @@ void List::showHead(){
 
 void List::traverse(){
     Node* temp = head;
+    if(head == nullptr){
+        // cout << "Emptyy" << endl;
+        return;
+    }
     while(temp->next!= nullptr){
         cout << temp->data << endl;
         temp = temp->next;
         if(temp->next == nullptr){
             cout << temp->data << endl;
         }
-    }
-    if(head == nullptr){
-        cout << "Emptyy" << endl;
-        return;
     }
     if(head->next == nullptr){
         cout << head->data << endl;
