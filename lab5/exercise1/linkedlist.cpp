@@ -129,3 +129,34 @@ void List::SwapPositions(Node* p1, Node* p2){
     p1 = p2;
     p2 = temp;
 }
+
+void List::Swap(int v1, int v2){
+    Node* temp1 = head;
+   
+    Node* node1 = nullptr;
+    Node* node2 = nullptr;
+    while(temp1!=nullptr){
+        if(temp1->data == v1){
+            node1 = temp1;
+        }
+        if(temp1->data == v2){
+            node2 = temp1;
+        }
+        temp1 = temp1->next;
+    }
+    Node* temporary = node1;
+    
+    node1 = node2;
+    node2 = temporary;
+
+}
+void List::Update(int v, int UserValue){
+    Node* temp = head;
+    while(temp!=nullptr){
+        if(temp->data == v){
+            temp->data = UserValue;
+            break;
+        }
+        
+    }
+}

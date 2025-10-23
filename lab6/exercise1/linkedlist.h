@@ -8,17 +8,17 @@ struct Node{
     int data;
     Node* next;
 };
-class List
+class Stack
 {
 private:	
 	Node * head; 
 public:
-	List();
-   ~List();
+	Stack();
+   ~Stack();
     void push(int value);
 	void pop();
 	void traverse();
-	void showHead();
+
 
 };
 

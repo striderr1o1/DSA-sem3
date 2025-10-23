@@ -1,13 +1,13 @@
 #include "linkedlist.h"
 
-List::List(){
+Stack::Stack(){
     head = nullptr;
 }
-List::~List(){
+Stack::~Stack(){
     delete head;
 }
 
-void List::push(int value){
+void Stack::push(int value){
     Node* temp = head;
     Node* newnode = new Node;
     newnode->data = value;
@@ -23,7 +23,7 @@ void List::push(int value){
     temp->next = newnode;
 }
 
-void List::pop(){
+void Stack::pop(){
     
     if(head == nullptr){
         cout << "Empty" << endl;
@@ -45,11 +45,9 @@ void List::pop(){
     prev->next = nullptr;
     delete temp;
 }
-void List::showHead(){
-    cout << head->data << endl;
-}
 
-void List::traverse(){
+
+void Stack::traverse(){
     Node* temp = head;
     if(head == nullptr){
         // cout << "Emptyy" << endl;

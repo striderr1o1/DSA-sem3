@@ -43,6 +43,9 @@ public:
 
 	void SwapPositions(Node* p1, Node* p2);
 
+	void Swap(int v1, int v2);
+
+	void Update(int v, int UserValue);
 };
 
 #endif

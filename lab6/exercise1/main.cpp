@@ -2,7 +2,7 @@
 using namespace std;
 #include "linkedlist.h"
 int main(){
-    List l;
+    Stack l;
     
     
     l.pop();
@@ -10,7 +10,7 @@ int main(){
     l.push(20);
     l.push(30);
     cout << "head: ";
-    l.showHead();
+   
     cout << endl;
     l.traverse();
     cout << "New: " << endl;
