@@ -4,6 +4,7 @@
 using namespace std;
 struct node{
     int data;
+    int priority = 0;
     node* prev;
     node* next;
 };
@@ -20,6 +21,9 @@ class MultiStruct{
     void queue_pop();
     void display_queue();
     // void insert_Pqueue(int v, int priority);
+    void insert_priorityQ(int v, int priority);
+    void display_pqueue();
+    void pqueue_pop();
     public:
     MultiStruct();
     void insert(int v);

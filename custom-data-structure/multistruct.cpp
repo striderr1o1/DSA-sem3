@@ -7,6 +7,7 @@ MultiStruct::MultiStruct(){
 }
 
 void MultiStruct::insert(int v){
+    int priority;
     switch (mode){
         case 0:
         insert_stack(v);
@@ -15,6 +16,9 @@ void MultiStruct::insert(int v){
         insert_queue(v);
         break;
         case 2:
+        cout << "Enter Priority: ";
+        cin >> priority;
+        insert_priorityQ(v, priority);
         break;
     }
 }
@@ -29,6 +33,7 @@ void MultiStruct::display(){
         display_queue();
         break;
         case 2:
+        display_pqueue();
         break;
     }
 }
@@ -42,6 +47,7 @@ void MultiStruct::pop(){
         queue_pop();
         break;
         case 2:
+        pqueue_pop();
         break;
     }
 }
