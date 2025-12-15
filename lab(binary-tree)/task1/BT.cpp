@@ -9,13 +9,41 @@ void BinaryTree::PreOrderTraversalFromRoot(){
 }
 
 void BinaryTree::PreOrderTraverse(Node* startingNode){
-    // if(startingNode!=nullptr)
-    // cout << startingNode->value << endl;
+    if(startingNode!=nullptr)                       
+    cout << startingNode->value << endl;
     if(startingNode == nullptr){
         return;
     }
     PreOrderTraverse(startingNode->left);
     PreOrderTraverse(startingNode->right);
+}
+
+void BinaryTree::PostOrderTraversalFromRoot(){
+    PostOrderTraverse(root);
+}
+
+void BinaryTree::PostOrderTraverse(Node* startingNode){
+    if(startingNode == nullptr){
+        return;
+    }
+    PostOrderTraverse(startingNode->left);
+    PostOrderTraverse(startingNode->right);
+    if(startingNode!=nullptr)                       
+    cout << startingNode->value << endl;
+}
+
+void BinaryTree::InOrderTraversalFromRoot(){
+    InOrderTraverse(root);
+}
+
+void BinaryTree::InOrderTraverse(Node* startingNode){
+    if(startingNode == nullptr){
+        return;
+    }
+    InOrderTraverse(startingNode->left);
+    if(startingNode!=nullptr)                       
+    cout << startingNode->value << endl;
+    InOrderTraverse(startingNode->right);
 }
 
 Node* BinaryTree::SearchNode(int data){
@@ -48,14 +76,12 @@ Node* BinaryTree::FindNode(Node* node, int data){
     }
 
 }
-
 void BinaryTree::insertNode(int data){
     insertNodeInner(root, data);
 }
 
-void BinaryTree::insertNodeInner(Node* node, int data){
+void BinaryTree::insertNodeInner(Node* &node, int data){
     
-   
     if(root == nullptr){
         Node* newnode = new Node;
         newnode->value = data;
@@ -71,15 +97,18 @@ void BinaryTree::insertNodeInner(Node* node, int data){
         newnode->left = nullptr;
         newnode->right = nullptr;
         node = newnode;
+        cout << endl;
         return;
     }
     if(data <= node->value){//
         //go left
+        cout << "going left of " << node->value << " to add " << data << endl;
         insertNodeInner(node->left, data);
         return;
     }
     if(data > node->value){//go right
-        cout << "added" << endl;
+        // cout << "added" << endl;
+        cout << "going right of " << node->value << " to add " << data << endl;
         insertNodeInner(node->right, data);
         return;
     }

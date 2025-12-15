@@ -18,13 +18,6 @@ class Graph{
     int V;	 
     AdjList* arr; 
     public:
-//       Graph(int V);
-// \\ Create a new node of the list with value ‘d’
-//  AdjListNode* newAdjListNode(int d); 
-// \\ Create an edge from ‘src’ to ‘dest’
-//  void addEdge(int src, int dest);
-// \\ Print the vertices in the adjacency list of each vertex
-//  void printGraph();
     Graph(int v);
     AdjListNode* newAdjListNode(int d);
     void addEdge(int src, int dest);
