@@ -61,6 +61,8 @@ void Graph::PrintGraph(){
             cout << temp->dest << "->";
             temp = temp->next;
         }
+        cout << "null";
+        cout << endl;
         cout << endl;
     }
 }
