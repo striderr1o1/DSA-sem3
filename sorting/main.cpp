@@ -69,7 +69,6 @@ void SelectionSort(List l1){
     Node* temp = l1.head;
     while(temp != nullptr){
         Node* curr = temp;
-        
     }
 }
 
