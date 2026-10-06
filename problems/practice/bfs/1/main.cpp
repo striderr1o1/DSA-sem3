@@ -9,8 +9,7 @@ int main()
     signed int number1;
     cin >> number1;
     signed int number2;
-    cin >> number2;
-    signed int count = total_steps_needed(number1, number2);
+    cin >> number2; signed int count = total_steps_needed(number1, number2);
     cout << count;
 }
 // codeforces 520B two buttons
